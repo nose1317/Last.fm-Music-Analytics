@@ -19,13 +19,27 @@
 
 ## Installation
 
-Before running the project, make sure to install all required dependencies. Create a virtual environment and use pip to install the libraries:
+Before running the project, make sure to install all required dependencies. You can install them directly from GitHub using pip:
+
+```bash
+pip install git+https://github.com/nose1317/Last.fm-Music-Analytics.git
+```
+
+Alternatively, if you'd prefer to install the dependencies locally, create a virtual environment and use pip to install the libraries from the `requirements.txt` file:
 
 ```bash
 pip install -r requirements.txt
 ```
 
 This will install all the necessary libraries, including Playwright, pandas, matplotlib, seaborn, ipywidgets, SQLite, and Jupyter.
+
+### Note:
+If you're using Playwright for the first time, you may need to install the browser dependencies by running the following command:
+
+```bash
+python -m playwright install
+```
+
 
 ## Usage
 
