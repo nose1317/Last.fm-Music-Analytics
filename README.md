@@ -17,60 +17,95 @@
 - **`interactive_data_aggregator.ipynb`**: A Jupyter notebook that allows users to interact with the music data, visualize trends, and perform data analysis in an interactive environment.
 - **`config.json`**: A configuration file containing the Last.fm username, password, and scraping settings like the start and end page for the web scraping.
 
+
 ## Installation
+
 
 Before running the project, make sure to install all required dependencies. You can install them directly from GitHub using pip:
 
 ```bash
 pip install git+https://github.com/nose1317/Last.fm-Music-Analytics.git
 ```
-
-Alternatively, if you'd prefer to install the dependencies locally, create a virtual environment and use pip to install the libraries from the `requirements.txt` file:
+Alternatively, if you'd prefer to install the dependencies locally, create a virtual environment and use pip to install the libraries from the requirements.txt file:
 
 ```bash
 pip install -r requirements.txt
+This will install all the necessary libraries, including Playwright, pandas, matplotlib, seaborn, ipywidgets, SQLite, and Jupyter.
 ```
 
-This will install all the necessary libraries, including Playwright, pandas, matplotlib, seaborn, ipywidgets, SQLite, and Jupyter.
-
-### Note:
+Note:
 If you're using Playwright for the first time, you may need to install the browser dependencies by running the following command:
 
 ```bash
 python -m playwright install
 ```
 
+## Locating the `config.json` File and Other Files After Installation
 
-## Usage
+After installing the package with `pip install Last.fm-Music-Analytics`, the files will be located in your Python environment's `site-packages` directory.
 
-### Scraping Data
+You can find the root installation folder by running:
 
-1. Configure your `config.json` with your Last.fm username and password.
-2. Run the scraping script (`lastfm_scripting.py`) to scrape music data and store it in a CSV file:
+```bash
+pip show Last.fm-Music-Analytics
+```
+
+## Locating the `config.json` File and Other Files After Installation
+
+After installing the package with `pip install Last.fm-Music-Analytics`, the files will be located in your Python environment's `site-packages` directory.
+
+You can find the root installation folder by running:
+
+```bash
+pip show Last.fm-Music-Analytics
+```
+
+This will display the location of the installed package. Look for the Location field, which will show the folder path.
+
+For example:
+
+```bash
+Location: /path/to/python/site-packages
+```
+
+Once you find this folder, navigate to the directory where lfmma (the folder containing the config.json file) is located.
+
+### Finding the config.json File
+The config.json file is located inside the lfmma folder. You can access it by navigating to:
+
+```bash
+/path/to/python/site-packages/lfmma/config.json
+```
+
+This will print the full path to the config.json file within the installed package, allowing you to edit it for your credentials.
+
+### Usage
+
+#### Scraping Data
+Configure your config.json with your Last.fm username and password.  
+Run the scraping script (lastfm_scripting.py) to scrape music data and store it in a CSV file:
 
 ```bash
 python lastfm_scripting.py
 ```
 
-**Note:** The time it takes for scraping depends on the amount of data in your Last.fm account, and it may take some time to complete.
+Note: The time it takes for scraping depends on the amount of data in your Last.fm account, and it may take some time to complete.
 
 ### Processing Data
-
-Process the CSV file (`songs_data.csv`) and store it in the SQLite database by running the `csv_to_db.py` script:
+Process the CSV file (songs_data.csv) and store it in the SQLite database by running the `csv_to_db.py` script:
 
 ```bash
 python csv_to_db.py
 ```
 
-**Note:** The data transformation process may also take time depending on the size and complexity of your CSV file, as it will be processed and inserted into the SQLite database for querying. The database is structured in **3rd Normal Form (3NF)** to ensure optimal organization and minimize data redundancy.
+Note: The data transformation process may also take time depending on the size and complexity of your CSV file, as it will be processed and inserted into the SQLite database for querying. The database is structured in 3rd Normal Form (3NF) to ensure optimal organization and minimize data redundancy.
 
 ### Interactive Data Analysis
-
-1. Open `interactive_data_aggregator.ipynb` in Jupyter Notebook or JupyterLab.
-2. Use the provided widgets to visualize and interact with the scraped data.
+Open `interactive_data_aggregator.ipynb` in Jupyter Notebook or JupyterLab.  
+Use the provided widgets to visualize and interact with the scraped data.
 
 ### License
+This project is licensed under the MIT License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+GitHub: [nose1317](https://github.com/nose1317)
 
-GitHub: nose1317
