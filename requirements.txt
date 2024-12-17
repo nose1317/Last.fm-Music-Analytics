@@ -1,0 +1,7 @@
+playwright
+pandas
+matplotlib
+seaborn
+ipywidgets
+sqlite3
+jupyter
