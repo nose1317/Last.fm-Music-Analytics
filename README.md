@@ -30,24 +30,15 @@ Alternatively, if you'd prefer to install the dependencies locally, create a vir
 
 ```bash
 pip install -r requirements.txt
-This will install all the necessary libraries, including Playwright, pandas, matplotlib, seaborn, ipywidgets, SQLite, and Jupyter.
 ```
+This will install all the necessary libraries, including Playwright, pandas, matplotlib, seaborn, ipywidgets, SQLite, and Jupyter.
+
 
 Note:
 If you're using Playwright for the first time, you may need to install the browser dependencies by running the following command:
 
 ```bash
 python -m playwright install
-```
-
-## Locating the `config.json` File and Other Files After Installation
-
-After installing the package with `pip install Last.fm-Music-Analytics`, the files will be located in your Python environment's `site-packages` directory.
-
-You can find the root installation folder by running:
-
-```bash
-pip show Last.fm-Music-Analytics
 ```
 
 ## Locating the `config.json` File and Other Files After Installation
